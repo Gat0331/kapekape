@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pahinga Café - Add to Cart</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>Pahinga Café</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="add-to-cart.html" class="active">Add to Cart</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <header>
+            <h1>Add to Cart</h1>
+            <p>Select your favorite items and see your total!</p>
+        </header>
+
+        <section class="menu-section">
+            <form id="cartForm" onsubmit="return false;">
+                <table class="menu-table">
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Add</th>
+                    </tr>
+                    <tr>
+                        <td>Espresso</td>
+                        <td>₱80</td>
+                        <td><input type="number" min="0" value="0" name="espresso" class="qty-input"></td>
+                        <td><button type="button" onclick="addItem('espresso')">Add</button></td>
+                    </tr>
+                    <tr>
+                        <td>Americano</td>
+                        <td>₱100</td>
+                        <td><input type="number" min="0" value="0" name="americano" class="qty-input"></td>
+                        <td><button type="button" onclick="addItem('americano')">Add</button></td>
+                    </tr>
+                    <tr>
+                        <td>Cappuccino</td>
+                        <td>₱120</td>
+                        <td><input type="number" min="0" value="0" name="cappuccino" class="qty-input"></td>
+                        <td><button type="button" onclick="addItem('cappuccino')">Add</button></td>
+                    </tr>
+                    <tr>
+                        <td>Caramel Macchiato</td>
+                        <td>₱140</td>
+                        <td><input type="number" min="0" value="0" name="macchiato" class="qty-input"></td>
+                        <td><button type="button" onclick="addItem('macchiato')">Add</button></td>
+                    </tr>
+                    <tr>
+                        <td>Chocolate Croissant</td>
+                        <td>₱90</td>
+                        <td><input type="number" min="0" value="0" name="croissant" class="qty-input"></td>
+                        <td><button type="button" onclick="addItem('croissant')">Add</button></td>
+                    </tr>
+                    <tr>
+                        <td>Blueberry Muffin</td>
+                        <td>₱100</td>
+                        <td><input type="number" min="0" value="0" name="muffin" class="qty-input"></td>
+                        <td><button type="button" onclick="addItem('muffin')">Add</button></td>
+                    </tr>
+                    <tr>
+                        <td>Cheesecake Slice</td>
+                        <td>₱150</td>
+                        <td><input type="number" min="0" value="0" name="cheesecake" class="qty-input"></td>
+                        <td><button type="button" onclick="addItem('cheesecake')">Add</button></td>
+                    </tr>
+                </table>
+            </form>
+            <div style="margin-top:30px;">
+                <h3>Your Cart</h3>
+                <table id="cartTable" class="menu-table">
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Remove</th>
+                    </tr>
+                </table>
+                <div id="cartTotal" style="margin-top:10px; font-size:18px; color:#3e2723;"></div>
+                <button type="button" onclick="saveOrderToDatabase()">Add To Cart</button>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Pahinga Café. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script src="cart.js"></script>
+</body>
+</html>
